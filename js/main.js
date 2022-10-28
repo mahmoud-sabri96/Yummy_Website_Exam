@@ -144,10 +144,12 @@ function displaySingleMeal(singleMeal) {
 //===================================>>>> Start Search Meals Feature <<<<============================
 //@@ create Keyup event on SearchByNameInput 
 $(".search #search_name").keyup(function () {
-    $("#home .single_meal").fadeOut(1000)
     let enterd_Name_Value = $(".search #search_name").val()
-    // console.log(searchValue)
-    getMeals(baseApi_meals_By_Name, enterd_Name_Value ? enterd_Name_Value : "")
+    $(".loadingScreen").fadeIn(500, function () {
+        $("#home .single_meal").fadeOut(500)
+        // console.log(searchValue)
+        getMeals(baseApi_meals_By_Name, enterd_Name_Value ? enterd_Name_Value : "")
+    })
 })
 
 //@@ create Keyup event on SearchByCategoryInput 
@@ -164,11 +166,11 @@ async function getMeals(baseApi, mealName) {
     let meals_OBJ = await meals.json();
     let meals_Array = meals_OBJ.meals
     // console.log(meals_Array)
-    $(".loadingScreen").fadeIn(1000)
+    // $(".loadingScreen").fadeIn(1000)
     $(document).ready(function () {
-        $(".loadingScreen").fadeOut(1000)
-        $(".home").fadeIn(500)
-        $(".home-meals").fadeIn(500)
+        // $(".loadingScreen").fadeOut(1000)
+        $(".home").fadeIn(1000)
+        $(".home-meals").fadeIn(1000)
         displayHomeData(meals_Array)
     })
 }
@@ -182,8 +184,8 @@ $(".nav_menu ul li a").click(function () {
 
     if ($(this).attr("data-sec") === "#search") {
         $("section").not(selectedSection).fadeOut(500)
-        $(".loadingScreen").fadeIn(500, function () {
-            $(selectedSection).fadeIn(500)
+        $(".loadingScreen").fadeIn(1000, function () {
+            $(selectedSection).fadeIn(1000)
         })
         $(".loadingScreen").fadeOut(500)
     }

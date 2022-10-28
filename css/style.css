@@ -35,7 +35,15 @@ a {
 }
 
 .container {
-    width: 80% !important;
+    width: 90% !important;
+    padding: 0px 40px;
+}
+
+@media (max-width: 650px) {
+    .container {
+        width: 90% !important;
+        margin-left: 10% !important;
+    }
 }
 
 h1,
@@ -221,7 +229,12 @@ section.search {
     background-color: #000 !important;
     z-index: 999999;
 }
-
+@media (max-width: 650px) {
+    .search .search_actions .row {
+        width:70% !important;
+        margin-left: 20git% !important;
+    }
+}
 .search .meal_box {
     cursor: pointer;
     overflow: hidden;

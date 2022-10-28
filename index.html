@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- perrty-checkbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+    <!-- bootStrap -->
+    <link rel="stylesheet" href="bootStrap/bootstrap.min.css">
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="fontAwesome/all.min.css">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="icon" href="images/Circuit Primary.png"> -->
+    <title>Exam 02 Route</title>
+</head>
+
+<body>
+
+    <div class="loadingScreen">
+        <div class="loader">Loading...</div>
+    </div>
+    <!-- ========================>>>> Start Design Side-nav-menu Component <<<<====================== -->
+    <div class="side_nav  d-flex justify-content-between">
+        <div class="nav_menu d-flex flex-column justify-content-between">
+            <ul class="d-flex flex-column h-50 justify-content-around ">
+                <li>
+                    <a href="#" class="text-white" data-sec="#search">Search</a>
+                </li>
+                <li>
+                    <a href="#" class="text-white" data-sec="#category">Category</a>
+                </li>
+                <li>
+                    <a href="#" class="text-white" data-sec="#area">Area</a>
+                </li>
+                <li>
+                    <a href="#" class="text-white" data-sec="#ingredient">Ingredients</a>
+                </li>
+                <li>
+                    <a href="#" class="text-white" data-sec="#contact">Contact Us</a>
+                </li>
+            </ul>
+            <div class="nav_social">
+                <ul class="d-flex justify-content-evenly ps-0">
+                    <li>
+                        <a href="https://www.facebook.com/Routelearning/" target="_blank" class="text-muted">
+                            <i class="fa-brands fa-square-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/Routelearning/" target="_blank" class="text-muted">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/Routelearning/" target="_blank" class="text-muted">
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                    </li>
+                </ul>
+                <p class="text-white fw-lighter px-2">Copyright Â© 2019 All Rights Reserved.</p>
+            </div>
+        </div>
+        <div class="nav_actions bg-white py-3">
+            <ul class="d-flex flex-column justify-content-between h-100 align-items-center ">
+                <li>
+                    <img src="images/Circuit Primary.png" alt="" class="logo">
+                </li>
+                <li>
+                    <span class="toggle_icon"><i class="toggle fa-solid fa-bars fs-3"></i></span>
+                </li>
+                <li>
+                    <div class="share_links d-flex flex-column justify-content-between">
+                        <a href="https://www.facebook.com/Routelearning/" target="_blank" class="text-dark">
+                            <i class="fa-solid fa-globe mb-2"></i></a>
+                        <a href="https://www.facebook.com/Routelearning/" target="_blank" class="text-dark">
+                            <i class="fa-solid fa-share-nodes"></i></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ========================>>>> Start Design Home Page Component <<<<====================== -->
+    <section class="home" id="home">
+        <div class="container py-5">
+
+            <!-- ######## Start Design AllMeals Home Component ######## -->
+            <div class="row home-meals mb-4">
+                <!-- code will create by Js -->
+            </div>
+
+            <!-- ######## Start Design single-meal Component ######## -->
+            <div class="single_meal">
+
+                <div class="row ">
+
+                    <div class="col-md-4">
+                        <img src="" alt="" class="img_detail img-fluid rounded-2">
+                        <h2 class="meals_tilte text-center text-white fw-lighter">....</h2>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="meal_details">
+                            <h2 class="fw-light text-white">Instruction</h2>
+                            <p class="meal_instructions text-white lh-lg">
+                                <!-- Js Here -->
+                            </p>
+                            <h5>Area:
+                                <small class="meal_area fw-light">
+                                    <!-- Js Here -->
+                                </small>
+                            </h5>
+                            <h5 class="mb-4">Category:
+                                <small class="meal_cate fw-light">
+                                    <!-- Js Here -->
+                                </small>
+                            </h5>
+                            <div class="meal_recipes">
+                                <h2 class="mb-3">Recipes :</h2>
+                                <div class="recipes ">
+                                    <!-- Js Here -->
+                                </div>
+                            </div>
+                            <div class="meal_tags mb-4">
+                                <h2 class="mb-3">Tags :</h2>
+                                <div class="tags">
+                                    <!-- Js Here -->
+                                </div>
+                            </div>
+                            <div class="meal_button">
+                                <button class="btn btn-outline-success">
+                                    <a href="" class="source text-white" target="_blank">Source</a>
+                                </button>
+                                <button class="btn btn-outline-danger"><a href="" class="youtube text-white"
+                                        target="_blank">Youtube</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ========================>>>> Start Design Search Page Component <<<<====================== -->
+    <section class="search" id="search">
+        <div class="container py-5">
+            <!-- ######## Start Design AllMeals Search Component ######## -->
+            <div class="search_actions">
+                <div class="row fixed-top w-75 rounded-4 mx-auto py-3 ">
+                    <div class="col-6">
+                        <input id="search_name" class="p-3 text-white bg-transparent form-control" type="search"
+                            placeholder="Search By Name">
+                    </div>
+                    <div class="col-6">
+                        <input id="search_category" class="p-3 text-white  form-control bg-transparent text-withe"
+                            type="search" placeholder="Search By Category">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ######## Start Design AllMeals Component ######## -->
+            <!-- <div class="row output_meals d-none">
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="meal_box position-relative  ">
+                        <img src="images/58oia61564916529.jpg" class="img-fluid rounded-2 ">
+                        <div class="meal_overlay p-3 position-absolute rounded-2 d-flex align-items-center">
+                            <span class="meal_caption">Cobra</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div> -->
+            <!-- ######## Start Design Single-Meal-Details Component ######## -->
+            <!-- <div class="row single_meal d-none ">
+
+                <div class="col-md-4">
+                    <img src="images/mlchx21564916997.jpg" alt="" class="img-fluid rounded-2">
+                    <h2 class="meals_tilte text-center text-white fw-lighter">Kumpir</h2>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="meal_details">
+                        <h2 class="fw-light text-white">Instruction</h2>
+                        <p class="meal_instructions text-white lh-lg">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut id necessitatibus deleniti
+                            magni quasi quam, delectus voluptas maxime obcaecati nihil? Deserunt nobis non repellendus
+                            beatae amet voluptas neque error maxime, doloremque, vitae cum animi, modi inventore magni?
+                            Laboriosam dolore dolor possimus, dolorem vel quasi nobis cumque odit sapiente, praesentium
+                            esse at perferendis facere ratione temporibus quis cupiditate quam, sed reiciendis! Magni,
+                            sed, consequatur tempore repudiandae dolore iste, nesciunt esse natus similique possimus
+                            inventore cumque eligendi ut impedit ipsam nisi et ducimus voluptate corporis. Totam,
+                            facilis maiores quaerat, est maxime, voluptatibus labore molestias aliquid harum suscipit
+                            reprehenderit amet nesciunt vero quam.
+                        </p>
+                        <h5>Area: <small class="meal_area fw-light">Egypt</small></h5>
+                        <h5 class="mb-4">Category: <small class="meal_area fw-light">Egypt</small></h5>
+                        <div class="meal_recipes">
+                            <h2 class="mb-3">Recipes :</h2>
+                            <div class="recipes ">
+                                <span class="alert alert-success d-inline-block px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-success d-inline-block  px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-success d-inline-block  px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-success d-inline-block  px-2 py-1">fdsdsfds</span>
+                            </div>
+                        </div>
+                        <div class="meal_tags mb-4">
+                            <h2 class="mb-3">Tags :</h2>
+                            <div class="tags">
+                                <span class="alert alert-danger d-inline-block px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-danger d-inline-block px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-danger d-inline-block px-2 py-1">fdsdsfds</span>
+                            </div>
+                        </div>
+                        <div class="meal_button">
+                            <button class="btn btn-outline-success"><a href=""
+                                    class="source text-white">Source</a></button>
+                            <button class="btn btn-outline-danger"><a href=""
+                                    class="source text-white">Youtube</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </section>
+
+    <!-- ========================>>>> Start Design Category Page Component <<<<====================== -->
+    <section class="category" id="category">
+        <div class="container py-5">
+
+            <!-- ######## Start Design all-Category-Meals  Component ######## -->
+            <div class="all_categories">
+                <div class="row">
+                    <!-- code will come Js -->
+                </div>
+            </div>
+
+            <!-- ######## Start Design single-Category-Meals  Component ######## -->
+            <!-- <div class="row single_category d-none">
+
+                <div class="col-lg-3 col-md-6 mb-4">
+
+                    <div class="meal_box position-relative  ">
+                        <img src="images/58oia61564916529.jpg" class="img-fluid rounded-2 ">
+                        <div
+                            class="meal_overlay p-3  position-absolute rounded-2 d-flex flex-column align-items-center justify-content-center">
+                            <span class="meal_caption ">Cobra</span>
+                            <small>Lorem ipsum dolor sit amet.</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> -->
+            <!-- ######## Start Design Single-Meal-Details Component ######## -->
+            <!-- <div class="row single_meal">
+
+                <div class="col-md-4">
+                    <img src="images/mlchx21564916997.jpg" alt="" class="img-fluid rounded-2">
+                    <h2 class="meals_tilte text-center text-white fw-lighter">Kumpir</h2>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="meal_details">
+                        <h2 class="fw-light text-white">Instruction</h2>
+                        <p class="meal_instructions text-white lh-lg">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut id necessitatibus deleniti
+                            magni quasi quam, delectus voluptas maxime obcaecati nihil? Deserunt nobis non repellendus
+                            beatae amet voluptas neque error maxime, doloremque, vitae cum animi, modi inventore magni?
+                            Laboriosam dolore dolor possimus, dolorem vel quasi nobis cumque odit sapiente, praesentium
+                            esse at perferendis facere ratione temporibus quis cupiditate quam, sed reiciendis! Magni,
+                            sed, consequatur tempore repudiandae dolore iste, nesciunt esse natus similique possimus
+                            inventore cumque eligendi ut impedit ipsam nisi et ducimus voluptate corporis. Totam,
+                            facilis maiores quaerat, est maxime, voluptatibus labore molestias aliquid harum suscipit
+                            reprehenderit amet nesciunt vero quam.
+                        </p>
+                        <h5>Area: <small class="meal_area fw-light">Egypt</small></h5>
+                        <h5 class="mb-4">Category: <small class="meal_area fw-light">Egypt</small></h5>
+                        <div class="meal_recipes">
+                            <h2 class="mb-3">Recipes :</h2>
+                            <div class="recipes ">
+                                <span class="alert alert-success d-inline-block px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-success d-inline-block  px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-success d-inline-block  px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-success d-inline-block  px-2 py-1">fdsdsfds</span>
+                            </div>
+                        </div>
+                        <div class="meal_tags mb-4">
+                            <h2 class="mb-3">Tags :</h2>
+                            <div class="tags">
+                                <span class="alert alert-danger d-inline-block px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-danger d-inline-block px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-danger d-inline-block px-2 py-1">fdsdsfds</span>
+                            </div>
+                        </div>
+                        <div class="meal_button">
+                            <button class="btn btn-outline-success"><a href=""
+                                    class="source text-white">Source</a></button>
+                            <button class="btn btn-outline-danger"><a href=""
+                                    class="source text-white">Youtube</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <!-- ========================>>>> Start Design Area Page Component <<<<====================== -->
+    <section class="area" id="area">
+        <div class="container py-5">
+            <!-- ######## Start Design all-areas  Component ######## -->
+            <div class="row all_areas_meals mb-3">
+                <!-- code will create By Js -->
+            </div>
+            <!-- ######## Start Design single-area-Meals  Component ######## -->
+            <!-- <div class="row single_area_meals">
+
+                <div class="col-lg-3 col-md-6 mb-4">
+
+                    <div class="meal_box position-relative  ">
+                        <img src="images/58oia61564916529.jpg" class="img-fluid rounded-2 ">
+                        <div
+                            class="meal_overlay p-3  position-absolute rounded-2 d-flex flex-column align-items-center justify-content-center">
+                            <span class="meal_caption ">Cobra</span>
+                            <small>Lorem ipsum dolor sit amet.</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> -->
+            <!-- ######## Start Design Single-Meal-Detail  Component ######## -->
+            <!-- <div class="row single_meal">
+
+                <div class="col-md-4">
+                    <img src="images/mlchx21564916997.jpg" alt="" class="img-fluid rounded-2">
+                    <h2 class="meals_tilte text-center text-white fw-lighter">Kumpir</h2>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="meal_details">
+                        <h2 class="fw-light text-white">Instruction</h2>
+                        <p class="meal_instructions text-white lh-lg">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut id necessitatibus deleniti
+                            magni quasi quam, delectus voluptas maxime obcaecati nihil? Deserunt nobis non repellendus
+                            beatae amet voluptas neque error maxime, doloremque, vitae cum animi, modi inventore magni?
+                            Laboriosam dolore dolor possimus, dolorem vel quasi nobis cumque odit sapiente, praesentium
+                            esse at perferendis facere ratione temporibus quis cupiditate quam, sed reiciendis! Magni,
+                            sed, consequatur tempore repudiandae dolore iste, nesciunt esse natus similique possimus
+                            inventore cumque eligendi ut impedit ipsam nisi et ducimus voluptate corporis. Totam,
+                            facilis maiores quaerat, est maxime, voluptatibus labore molestias aliquid harum suscipit
+                            reprehenderit amet nesciunt vero quam.
+                        </p>
+                        <h5>Area: <small class="meal_area fw-light">Egypt</small></h5>
+                        <h5 class="mb-4">Category: <small class="meal_area fw-light">Egypt</small></h5>
+                        <div class="meal_recipes">
+                            <h2 class="mb-3">Recipes :</h2>
+                            <div class="recipes ">
+                                <span class="alert alert-success d-inline-block px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-success d-inline-block  px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-success d-inline-block  px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-success d-inline-block  px-2 py-1">fdsdsfds</span>
+                            </div>
+                        </div>
+                        <div class="meal_tags mb-4">
+                            <h2 class="mb-3">Tags :</h2>
+                            <div class="tags">
+                                <span class="alert alert-danger d-inline-block px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-danger d-inline-block px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-danger d-inline-block px-2 py-1">fdsdsfds</span>
+                            </div>
+                        </div>
+                        <div class="meal_button">
+                            <button class="btn btn-outline-success"><a href=""
+                                    class="source text-white">Source</a></button>
+                            <button class="btn btn-outline-danger"><a href=""
+                                    class="source text-white">Youtube</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </section>
+    <!-- ========================>>>> Start Design Ingredients Page Component <<<<====================== -->
+    <section class="ingredient" id="ingredient">
+        <div class="container">
+            <!-- ######## Start Design all-areas-Meals  Component ######## -->
+            <div class="row all_ingredients_meals">
+                <!-- code will create by Js -->
+            </div>
+
+            <!-- ######## Start Design single-Ingredient-Meal  Component ######## -->
+            <!-- <div class="row single_ingredient_meals">
+
+                <div class="col-lg-3 col-md-6 mb-4">
+
+                    <div class="meal_box position-relative  ">
+                        <img src="images/58oia61564916529.jpg" class="img-fluid rounded-2 ">
+                        <div
+                            class="meal_overlay p-3  position-absolute rounded-2 d-flex flex-column align-items-center justify-content-center">
+                            <span class="meal_caption ">Cobra</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> -->
+            <!-- ######## Start Design single-Ingredient-Details  Component ######## -->
+            <!-- <div class="row single_meal">
+
+                <div class="col-md-4">
+                    <img src="images/mlchx21564916997.jpg" alt="" class="img-fluid rounded-2">
+                    <h2 class="meals_tilte text-center text-white fw-lighter">Kumpir</h2>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="meal_details">
+                        <h2 class="fw-light text-white">Instruction</h2>
+                        <p class="meal_instructions text-white lh-lg">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut id necessitatibus deleniti
+                            magni quasi quam, delectus voluptas maxime obcaecati nihil? Deserunt nobis non repellendus
+                            beatae amet voluptas neque error maxime, doloremque, vitae cum animi, modi inventore magni?
+                            Laboriosam dolore dolor possimus, dolorem vel quasi nobis cumque odit sapiente, praesentium
+                            esse at perferendis facere ratione temporibus quis cupiditate quam, sed reiciendis! Magni,
+                            sed, consequatur tempore repudiandae dolore iste, nesciunt esse natus similique possimus
+                            inventore cumque eligendi ut impedit ipsam nisi et ducimus voluptate corporis. Totam,
+                            facilis maiores quaerat, est maxime, voluptatibus labore molestias aliquid harum suscipit
+                            reprehenderit amet nesciunt vero quam.
+                        </p>
+                        <h5>Area: <small class="meal_area fw-light">Egypt</small></h5>
+                        <h5 class="mb-4">Category: <small class="meal_area fw-light">Egypt</small></h5>
+                        <div class="meal_recipes">
+                            <h2 class="mb-3">Recipes :</h2>
+                            <div class="recipes ">
+                                <span class="alert alert-success d-inline-block px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-success d-inline-block  px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-success d-inline-block  px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-success d-inline-block  px-2 py-1">fdsdsfds</span>
+                            </div>
+                        </div>
+                        <div class="meal_tags mb-4">
+                            <h2 class="mb-3">Tags :</h2>
+                            <div class="tags">
+                                <span class="alert alert-danger d-inline-block px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-danger d-inline-block px-2 py-1">fdsdsfds</span>
+                                <span class="alert alert-danger d-inline-block px-2 py-1">fdsdsfds</span>
+                            </div>
+                        </div>
+                        <div class="meal_button">
+                            <button class="btn btn-outline-success"><a href=""
+                                    class="source text-white">Source</a></button>
+                            <button class="btn btn-outline-danger"><a href=""
+                                    class="source text-white">Youtube</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- ========================>>>> Start Contact-Us Page Component <<<<====================== -->
+    <section class="contact" id="contact">
+        <div class="container py-5">
+            <h2 class="text-center mb-5">ContactUS...</h2>
+            <form action="">
+                <div class="row w-75 mx-auto">
+
+                    <div class="col-md-6">
+                        <div class="input_holder">
+                            <input id="user_name" placeholder="Enter Your Name" type="text" name="user_name"
+                                class="form-control border-0 border-bottom mb-2 bg-transparent">
+                            <p class="user_name_alert alert alert-danger">Special Characters and Numbers not allowed</p>
+                        </div>
+
+
+                        <div class="input_holder">
+                            <input id="user_phone" placeholder="Enter Your Phone" type="number" name="user_phone"
+                                class="form-control border-0 border-bottom mb-2 bg-transparent">
+                            <p class="phone_alert alert alert-danger">Enter valid Phone Number</p>
+                        </div>
+
+                        <div class="input_holder">
+                            <input id="user_password" placeholder="Enter Your Password" type="password"
+                                name="user_password" class="form-control border-0 border-bottom mb-2 bg-transparent">
+                            <p class="user_password_alert alert alert-danger">Enter valid password *Minimum eight
+                                characters, at
+                                least one
+                                letter and one number:*</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="input_holder">
+                            <input id="user_email" placeholder="Enter Your Email" type="text" name="user_email"
+                                class="form-control border-0 border-bottom mb-2 bg-transparent">
+                            <p class="user_email_alert alert alert-danger">Enter valid email. *Ex: xxx@yyy.zzz</p>
+                        </div>
+
+                        <div class="input_holder">
+                            <input id="user_age" placeholder="Enter Your Age" type="number" name="user_age"
+                                class="form-control border-0 border-bottom mb-2 bg-transparent">
+                            <p class="user_age_alert alert alert-danger">Enter valid Age (10 - 99) Years</p>
+
+                        </div>
+
+                        <div class="input_holder">
+                            <input id="user_rePassword" placeholder="Enter RePassword" type="password"
+                                name="user_password" class="form-control border-0 border-bottom  bg-transparent">
+                            <p class="user_password_alert alert alert-danger">Enter The Same Password</p>
+                        </div>
+
+                    </div>
+                    <button id="submit" class="btn btn-outline-success disabled w-50 mx-auto mt-md-1 mt-lg-5">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- particles.js -->
+    <!-- <script src="js/plugin/particles.js"></script>
+    <script src="js/plugin/app.js"></script> -->
+    <!-- bootstrap -->
+    <script src="js/popper.js"></script>
+    <script src="bootStrap/bootstrap.bundle.min.js"></script>
+    <!-- fontAwesome -->
+    <script src="fontAwesome/all.min.js"></script>
+    <!-- Main-JS -->
+    <script src="js/main.js"></script>
+</body>
+
+
+</html>

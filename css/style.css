@@ -1,0 +1,350 @@
+/* ==========================>>>> Start General Rules <<<<========================= */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+
+}
+
+::placeholder {
+    /* color: #888 !important; */
+    transition: .5s
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input {
+    color: #fff !important;
+}
+
+ul li {
+    list-style: none !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 80% !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: #fff;
+}
+
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* ==========================>>>> Start Loding Screen Component <<<<========================= */
+
+.loadingScreen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 99999;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.loader {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 100px auto;
+    width: .7em;
+    height: .7em;
+    border-radius: 50%;
+    position: relative;
+    text-indent: -9999em;
+    -webkit-animation: load4 1.3s infinite linear;
+    animation: load4 1.3s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+@-webkit-keyframes load4 {
+
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+/* ==========================>>>> Start Side-nav-menu Component <<<<========================= */
+.side_nav {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    z-index: 99999999;
+    background-color: #000;
+    left: -240px;
+}
+
+.side_nav .nav_actions {
+    width: 60px;
+}
+
+.side_nav .nav_actions ul img.logo {
+    width: 45px;
+    cursor: pointer;
+}
+
+.side_nav .nav_actions ul {
+    padding: 0 10px !important;
+}
+
+.fa-bars,
+.fa-globe,
+.fa-share-nodes,
+.fa-xmark {
+    cursor: pointer;
+}
+
+/* ==========================>>>> Start Home Page <<<<========================= */
+.home {
+    /* display: none; */
+}
+
+.home .meal_box {
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.home .meal_box .meal_overlay {
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    background-color: rgba(255, 255, 255, 0.591);
+    transition: all .7s;
+    color: #111;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.home .meal_box:hover .meal_overlay {
+    bottom: 0;
+}
+
+.home .single_meal {
+    display: none;
+}
+
+/* ==========================>>>> Start Search page <<<<========================= */
+section.search {
+    display: none;
+}
+
+.search .search_actions .row {
+    background-color: #000 !important;
+    z-index: 999999;
+}
+
+.search .meal_box {
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.search .meal_box .meal_overlay {
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    background-color: rgba(255, 255, 255, 0.591);
+    transition: all .7s;
+    color: #111;
+    font-size: 28px;
+}
+
+.meal_box:hover .meal_overlay {
+    bottom: 0;
+}
+
+/* ==========================>>>> Start Categeory Page <<<<========================= */
+section.category {
+    display: none;
+}
+
+.category .meal_box {
+    cursor: pointer;
+    overflow: hidden;
+    height: 100%;
+}
+
+.category .meal_box .meal_overlay {
+    width: 100%;
+    height: 102%;
+    bottom: -100%;
+    background-color: rgba(255, 255, 255, 0.591);
+    transition: all .7s;
+    color: #111;
+    font-size: 28px;
+}
+
+.category .meal_box:hover .meal_overlay {
+    bottom: 0;
+}
+
+.category small {
+    font-size: 18px;
+}
+
+/* ==========================>>>> Start Area Page <<<<========================= */
+section.area {
+    display: none;
+}
+
+.area .meal_box {
+    cursor: pointer;
+    transition: all .5s;
+    overflow: hidden;
+    height: 100%;
+}
+
+.all_areas_meals .meal_box:hover {
+    box-shadow: 10px .5rem 1rem rgba(248, 0, 0, 0.5) !important;
+}
+
+.area .meal_box .meal_overlay {
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    background-color: rgba(255, 255, 255, 0.591);
+    transition: all .7s;
+    color: #111;
+    font-size: 28px;
+}
+
+.area .meal_box:hover .meal_overlay {
+    bottom: 0;
+}
+
+.area small {
+    font-size: 18px;
+}
+
+/* ==========================>>>> Start Ingredients Page <<<<========================= */
+section.ingredient {
+    display: none;
+}
+
+.ingredient .meal_box {
+    cursor: pointer;
+    transition: all .5s;
+    overflow: hidden;
+    height: 100%;
+}
+
+.ingredient .meal_box:hover {
+    box-shadow: 10px .5rem 1rem rgba(9, 240, 1, 0.5) !important;
+
+}
+
+.ingredient .meal_box .meal_overlay {
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    background-color: rgba(255, 255, 255, 0.591);
+    transition: all .7s;
+    color: #111;
+    font-size: 28px;
+}
+
+
+/* ==========================>>>> Start Contact-US Page <<<<========================= */
+section.contact {
+    display: none;
+}
+
+.contact .form-control:focus {
+    box-shadow: 0 4px 4px rgba(206, 176, 42, 0.75) !important;
+}
+
+.contact .input_holder {
+    min-height: 130px;
+}
+
+.contact .alert {
+    display: none;
+}

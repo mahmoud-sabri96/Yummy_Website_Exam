@@ -25,7 +25,6 @@ $(".toggle_icon").click(function () {
     }
 })
 
-
 //======================>>>> Start Display Data in Home Page Feature <<<<====================
 
 const all_Meals_Api = `https://www.themealdb.com/api/json/v1/1/search.php?s=`;
@@ -38,7 +37,6 @@ const all_Areas_API = `https://www.themealdb.com/api/json/v1/1/list.php?a=list`;
 const filter_By_Areas_API = `https://www.themealdb.com/api/json/v1/1/filter.php?a=`;
 const all_Ingredients_API = `https://www.themealdb.com/api/json/v1/1/list.php?i=list`;
 const filter_By_Ingredient_API = `https://www.themealdb.com/api/json/v1/1/filter.php?i=`
-
 
 //@@ Iplementation of function which get All Meals
 async function getData(api_URL) {
@@ -75,7 +73,6 @@ function displayHomeData(mealsData) {
     $(".home-meals").html(allMealsHolder)
 };
 
-
 //================>>>> Start Fetching & Display Single in Home Page Feature <<<<==============
 
 //@@ Iplementation of function which get Single Meals
@@ -91,7 +88,6 @@ async function fetchSingleMeal(meal_id) {
     displaySingleMeal(singleMeal)
     // })
 }
-
 
 //@@ Iplementation of function which display Single Meal Details
 function displaySingleMeal(singleMeal) {
@@ -141,12 +137,9 @@ function displaySingleMeal(singleMeal) {
             })
         })
     })
-
-
 }
 
 //================>>>> Start Routing Between links of Side-nav-Menu Feature <<<<=========================
-
 
 //===================================>>>> Start Search Meals Feature <<<<============================
 //@@ create Keyup event on SearchByNameInput 
@@ -209,7 +202,6 @@ $(".nav_menu ul li a").click(function () {
             $(selectedSection).fadeIn(1000);
             fetchAllAreasMeals()
         })
-
     }
 
     if ($(this).attr("data-sec") === "#ingredient") {
@@ -228,10 +220,7 @@ $(".nav_menu ul li a").click(function () {
         $(selectedSection).fadeIn(1000);
     }
 
-
-
 })
-
 
 //@@ Iplementation of function which get AllCategory Meals
 async function fetchAllCategoryMeals() {
@@ -244,7 +233,6 @@ async function fetchAllCategoryMeals() {
         displayAllGategory(AllCategoriesArr)
     })
 }
-
 
 //@@ Iplementation of function which limit the length of string
 function truncate(string, n) {
@@ -339,7 +327,6 @@ async function getMealsOfArea(selectedArea) {
 
 }
 
-
 //===================================>>>> Start Ingredients Meals Feature <<<<============================
 
 //@@ Iplementation of function which get AllIngredient Meals
@@ -377,7 +364,6 @@ function displayAllIngredients(AllIngredientMealsArr) {
     $(".ingredient .all_ingredients_meals").html(AllIngredientsDom);
 }
 
-
 //@@ Iplementation of function which display Meals for Selected Ingredent
 async function getMealsOfIngredient(selectedIngredient) {
     let MealsOfIngerdent = await fetch(`${filter_By_Ingredient_API}${selectedIngredient}`)
@@ -394,8 +380,6 @@ async function getMealsOfIngredient(selectedIngredient) {
     })
 }
 
-
-
 let nameRegex = /^[a-zA-Z]/; // spicial char not allow
 let emailRegex = /^[a-zA-Z]+\d?@[a-zA-Z]{2,}\.com$/;
 let phoneRegex = /^\d{11}$/;
@@ -409,7 +393,6 @@ let repasswordIsValid;
 let emailIsValid;
 let ageIsValid;
 
-
 $("input").keyup(function () {
 
     if ($(this).attr("id") === "user_name") {
@@ -421,7 +404,6 @@ $("input").keyup(function () {
         }
     }
 
-
     if ($(this).attr("id") === "user_phone") {
         phoneIsValid = checkInputValidation($(this), phoneRegex)
         if (phoneIsValid === false) {
@@ -430,7 +412,6 @@ $("input").keyup(function () {
             $(this).next().fadeOut(500)
         }
     }
-
 
     if ($(this).attr("id") === "user_password") {
         passwordIsValid = checkInputValidation($(this), passwordRegex)
@@ -473,12 +454,8 @@ $("input").keyup(function () {
             $(this).next().fadeOut(500)
         }
     }
-
     formValidation(nameIsValid, phoneIsValid, passwordIsValid, emailIsValid, ageIsValid, repasswordIsValid)
-
 })
-
-
 
 //@@ the implementaion of the Function which checkValidition of individual input
 function checkInputValidation(input, regex) {
@@ -512,41 +489,5 @@ function formValidation(nameIsValid, phoneIsValid, passwordIsValid, emailIsValid
         console.log("offff")
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//@@Iplementation of function which search Meals By Category
-// async function getMealByCategory(mealCate) {
-//     let mealsCategory = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${mealCate ? mealCate : ''}`)
-//     let mealsCategoryOBJ = await mealsCategory.json();
-//     let mealsCategoryArray = mealsCategoryOBJ.meals
-//     console.log(mealsCategoryArray)
-//     $(".home").fadeIn(500)
-//     $(".home .home-meals").fadeIn(500)
-//     displayHomeData(mealsCategoryArray)
-// }
 
 

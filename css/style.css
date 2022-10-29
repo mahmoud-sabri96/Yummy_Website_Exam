@@ -12,7 +12,6 @@ body {
 }
 
 ::placeholder {
-    /* color: #888 !important; */
     transition: .5s
 }
 
@@ -169,6 +168,45 @@ section {
     z-index: 99999999;
     background-color: #000;
     left: -240px;
+    /* left: 0px; */
+}
+
+.side_nav .nav_menu ul.animate li:nth-child(1) {
+    transform: translateY(200px);
+    opacity: 0;
+    animation: fadeUp .5s .1s ease-in-out forwards ;
+}
+.side_nav .nav_menu ul.animate li:nth-child(2) {
+    transform: translateY(200px);
+    opacity: 0;
+    animation: fadeUp .5s .3s ease-in-out forwards ;
+}
+.side_nav .nav_menu ul.animate li:nth-child(3) {
+    transform: translateY(200px);
+    opacity: 0;
+    animation: fadeUp .5s .5s ease-in-out forwards ;
+}
+.side_nav .nav_menu ul.animate li:nth-child(4) {
+    transform: translateY(200px);
+    opacity: 0;
+    animation: fadeUp .5s .7s ease-in-out forwards ;
+}
+.side_nav .nav_menu ul.animate li:nth-child(5) {
+    /* background-color: blue; */
+    transform: translateY(200px);
+    opacity: 0;
+    animation: fadeUp .5s .9s ease-in-out forwards ;
+}
+
+@keyframes fadeUp {
+    0%{
+        transform: translateY(200px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
 
 .side_nav .nav_actions {
@@ -181,7 +219,7 @@ section {
 }
 
 .side_nav .nav_actions ul {
-    padding: 0 10px !important;
+    padding: 50px 10px !important;
 }
 
 .fa-bars,
@@ -192,13 +230,11 @@ section {
 }
 
 /* ==========================>>>> Start Home Page <<<<========================= */
-.home {
-    /* display: none; */
-}
 
 .home .meal_box {
     cursor: pointer;
     overflow: hidden;
+    text-align: center;
 }
 
 .home .meal_box .meal_overlay {
@@ -235,24 +271,6 @@ section.search {
         margin-left: 20% !important;
     }
 }
-.search .meal_box {
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.search .meal_box .meal_overlay {
-    width: 100%;
-    height: 100%;
-    bottom: -100%;
-    background-color: rgba(255, 255, 255, 0.591);
-    transition: all .7s;
-    color: #111;
-    font-size: 28px;
-}
-
-.meal_box:hover .meal_overlay {
-    bottom: 0;
-}
 
 /* ==========================>>>> Start Categeory Page <<<<========================= */
 section.category {
@@ -263,6 +281,7 @@ section.category {
     cursor: pointer;
     overflow: hidden;
     height: 100%;
+    text-align: center;
 }
 
 .category .meal_box .meal_overlay {
@@ -273,6 +292,7 @@ section.category {
     transition: all .7s;
     color: #111;
     font-size: 28px;
+    overflow: hidden;
 }
 
 .category .meal_box:hover .meal_overlay {
@@ -299,20 +319,6 @@ section.area {
     box-shadow: 10px .5rem 1rem rgba(248, 0, 0, 0.5) !important;
 }
 
-.area .meal_box .meal_overlay {
-    width: 100%;
-    height: 100%;
-    bottom: -100%;
-    background-color: rgba(255, 255, 255, 0.591);
-    transition: all .7s;
-    color: #111;
-    font-size: 28px;
-}
-
-.area .meal_box:hover .meal_overlay {
-    bottom: 0;
-}
-
 .area small {
     font-size: 18px;
 }
@@ -334,17 +340,6 @@ section.ingredient {
 
 }
 
-.ingredient .meal_box .meal_overlay {
-    width: 100%;
-    height: 100%;
-    bottom: -100%;
-    background-color: rgba(255, 255, 255, 0.591);
-    transition: all .7s;
-    color: #111;
-    font-size: 28px;
-}
-
-
 /* ==========================>>>> Start Contact-US Page <<<<========================= */
 section.contact {
     display: none;
@@ -355,7 +350,7 @@ section.contact {
 }
 
 .contact .input_holder {
-    min-height: 130px;
+    min-height: 90px;
 }
 
 .contact .alert {

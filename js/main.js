@@ -1,11 +1,12 @@
 // ================>>>>>> go To Home Feature <<<<===================
-// $("img.logo").click(function () {
-//     $("section").not("section.home").fadeOut(500, function () {
-//         getData(all_Meals_Api);
-//         $(".home-meals").fadeIn(800)
-//         $(".single_meal").fadeOut(800)
-//     })
-// })
+$("img.logo").click(function () {
+    $("section").not("section.home").fadeOut(500, function () {
+        getData(all_Meals_Api);
+        $(".single_meal").fadeOut(800)
+        $(".home").fadeIn(800)
+        $(".home-meals").fadeIn(800)
+    })
+})
 
 // ================>>>>>> toggle Side-Nav Feature <<<<===================
 
@@ -17,9 +18,11 @@ $(".toggle_icon").click(function () {
 
     //@@check if the nav-menu is opened or not
     if ($(".side_nav").offset().left == 0) {
+        $(".side_nav ul.links").removeClass("animate")
         $(".side_nav").animate({ left: (-navMenuWidth) }, 500);
         $(".toggle_icon").html(`<i class="toggle fa-solid fa-bars fs-3"></i>`);
     } else {
+        $(".side_nav ul.links").addClass("animate")
         $(".side_nav").animate({ left: 0 }, 500);
         $(".toggle_icon").html(`<i class="fa-solid fa-xmark fs-2"></i>`);
     }
@@ -44,7 +47,7 @@ async function getData(api_URL) {
     let results = await response.json();
     // console.log(results);
     let meals = results.meals
-    console.log(meals);
+    // console.log(meals);
     $(document).ready(function () {
         displayHomeData(meals)
     })
@@ -77,7 +80,7 @@ function displayHomeData(mealsData) {
 
 //@@ Iplementation of function which get Single Meals
 async function fetchSingleMeal(meal_id) {
-    console.log(meal_id)
+    // console.log(meal_id)
     let mealResponse = await fetch(`${baseAPI_meals_ByID}${meal_id}`)
     let mealOBJ = await mealResponse.json();
     // console.log(mealOBJ)
@@ -108,7 +111,7 @@ function displaySingleMeal(singleMeal) {
                 if (singleMeal.strTags !== null) {
                     let mealTags = singleMeal.strTags;
                     let mealTagsArr = mealTags.split(",").filter((e) => e !== '');
-                    console.log(mealTagsArr)
+                    // console.log(mealTagsArr)
                     let tagsDom = '';
                     for (let i = 0; i < mealTagsArr.length; i++) {
                         tagsDom += `<span class="alert alert-danger d-inline-block px-2 py-1 me-2">${mealTagsArr[i]}</span>`
@@ -118,7 +121,7 @@ function displaySingleMeal(singleMeal) {
 
                 let AllingerdientsObj = Object.entries(singleMeal) // reurn array [[key,value],[key,value] ,[key,value]]
                 let ingerdientsArr = (AllingerdientsObj.filter((e) => e[0].includes("strIngredient")).map((e) => e[1]).filter((e) => e !== ""))
-                console.log(ingerdientsArr);
+                // console.log(ingerdientsArr);
 
                 // the next function return array of values of ingredients
                 let AllrecipesObj = Object.entries(singleMeal) // reurn array [[key,value],[key,value] ,[key,value]]
@@ -127,7 +130,7 @@ function displaySingleMeal(singleMeal) {
                         return e[1]
                     }
                 }).filter(e => e !== undefined))
-                console.log(AllrecipesArr);
+                // console.log(AllrecipesArr);
 
                 let recipesDom = '';
                 for (let i = 0; i < AllrecipesArr.length; i++) {
@@ -147,7 +150,6 @@ $(".search #search_name").keyup(function () {
     let enterd_Name_Value = $(".search #search_name").val()
     $(".loadingScreen").fadeIn(500, function () {
         $("#home .single_meal").fadeOut(500)
-        // console.log(searchValue)
         getMeals(baseApi_meals_By_Name, enterd_Name_Value ? enterd_Name_Value : "")
     })
 })
@@ -156,7 +158,6 @@ $(".search #search_name").keyup(function () {
 $(".search #search_category").keyup(function () {
     $("#home .single_meal").fadeOut(1000)
     let entered_Cate_Value = $(".search #search_category").val()
-    // console.log(search_Cate_Value)
     getMeals(baseAPI_meals_Firstletter, entered_Cate_Value ? entered_Cate_Value : 's')
 })
 
@@ -166,7 +167,6 @@ async function getMeals(baseApi, mealName) {
     let meals_OBJ = await meals.json();
     let meals_Array = meals_OBJ.meals
     // console.log(meals_Array)
-    // $(".loadingScreen").fadeIn(1000)
     $(document).ready(function () {
         // $(".loadingScreen").fadeOut(1000)
         $(".home").fadeIn(1000)
@@ -181,6 +181,11 @@ async function getMeals(baseApi, mealName) {
 // @@ create click event on nav-menu link
 $(".nav_menu ul li a").click(function () {
     let selectedSection = $(this).attr("data-sec");
+
+    //@@ to hide nav after click on link
+    $(".side_nav").animate({ left: (-navMenuWidth) }, 500);
+    //@@ to change close icon to toggle icon after click on link
+    $(".toggle_icon").html(`<i class="toggle fa-solid fa-bars fs-3"></i>`);
 
     if ($(this).attr("data-sec") === "#search") {
         $("section").not(selectedSection).fadeOut(500)
@@ -212,7 +217,6 @@ $(".nav_menu ul li a").click(function () {
             $(selectedSection).fadeIn(1000);
             fetchAllIngredientsMeals()
         })
-
     }
 
     if ($(this).attr("data-sec") === "#contact") {
@@ -266,7 +270,6 @@ async function getMealsByCategory(selectedCategory) {
     let MealsOfCate = await fetch(`${filter_BY_Category_API}${selectedCategory}`)
     let MealsOfCateObj = await MealsOfCate.json();
     let MealsOfCateArr = MealsOfCateObj.meals
-    // console.log(MealsOfCateArr)
     $(".loadingScreen").fadeIn(1000)
     $(document).ready(function () {
         $(".category").fadeOut(1000, function () {
@@ -315,8 +318,7 @@ async function getMealsOfArea(selectedArea) {
     let MealsOfAreas = await fetch(`${filter_By_Areas_API}${selectedArea}`)
     let MealsOfAreasObj = await MealsOfAreas.json();
     let MealsOfAreasArr = MealsOfAreasObj.meals
-    console.log(MealsOfAreasArr)
-    // let MealsOfCateArr = MealsOfCateObj.meals
+    // console.log(MealsOfAreasArr)
     $(".loadingScreen").fadeIn(1000)
     $(document).ready(function () {
         $(".area").fadeOut(1000, function () {
@@ -326,7 +328,6 @@ async function getMealsOfArea(selectedArea) {
             displayHomeData(MealsOfAreasArr)
         })
     })
-
 }
 
 //===================================>>>> Start Ingredients Meals Feature <<<<============================
@@ -382,11 +383,12 @@ async function getMealsOfIngredient(selectedIngredient) {
     })
 }
 
-let nameRegex = /^[a-zA-Z]/; // spicial char not allow
-let emailRegex = /^[a-zA-Z]+\d?@[a-zA-Z]{2,}\.com$/;
-let phoneRegex = /^\d{11}$/;
-let ageRegex = /^\d{2}/;
-let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+// @@ create Regex for every Input
+const nameRegex = /^[a-zA-Z]/; // spicial char not allow
+const emailRegex = /^[a-zA-Z]+\d?@[a-zA-Z]{2,}\.com$/;
+const phoneRegex = /^\d{11}$/;
+const ageRegex = /^\d{2}$/;
+const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
 let nameIsValid;
 let phoneIsValid;
@@ -395,33 +397,18 @@ let repasswordIsValid;
 let emailIsValid;
 let ageIsValid;
 
+// @@ create keyup event on every input
 $("input").keyup(function () {
-
     if ($(this).attr("id") === "user_name") {
         nameIsValid = checkInputValidation($(this), nameRegex)
-        if (nameIsValid === false) {
-            $(this).next().fadeIn(500)
-        } else {
-            $(this).next().fadeOut(500)
-        }
     }
 
     if ($(this).attr("id") === "user_phone") {
         phoneIsValid = checkInputValidation($(this), phoneRegex)
-        if (phoneIsValid === false) {
-            $(this).next().fadeIn(500)
-        } else {
-            $(this).next().fadeOut(500)
-        }
     }
 
     if ($(this).attr("id") === "user_password") {
         passwordIsValid = checkInputValidation($(this), passwordRegex)
-        if (passwordIsValid === false) {
-            $(this).next().fadeIn(500)
-        } else {
-            $(this).next().fadeOut(500)
-        }
     }
 
 
@@ -429,32 +416,13 @@ $("input").keyup(function () {
         let id_Attr = ($(this).attr("name"))  // return user_password
         let passwordInput = $(`#${id_Attr}`)
         repasswordIsValid = checkRepasswordValue($(this), passwordInput)
-        console.log(repasswordIsValid)
-        if (repasswordIsValid === false) {
-            $(this).next().fadeIn(500)
-        } else if (repasswordIsValid === true) {
-            $(this).next().removeClass("alert-danger").addClass("alert-success").fadeIn(500).text("password is matched").fadeOut(1500)
-        }
     }
 
     if ($(this).attr("id") === "user_email") {
         emailIsValid = checkInputValidation($(this), emailRegex)
-        console.log(emailIsValid)
-        if (emailIsValid === false) {
-            $(this).next().fadeIn(500)
-        } else {
-            $(this).next().fadeOut(500)
-        }
-
     }
     if ($(this).attr("id") === "user_age") {
         ageIsValid = checkInputValidation($(this), ageRegex)
-        console.log(ageIsValid)
-        if (ageIsValid === false) {
-            $(this).next().fadeIn(500)
-        } else {
-            $(this).next().fadeOut(500)
-        }
     }
     formValidation(nameIsValid, phoneIsValid, passwordIsValid, emailIsValid, ageIsValid, repasswordIsValid)
 })
@@ -463,10 +431,10 @@ $("input").keyup(function () {
 function checkInputValidation(input, regex) {
     let inputValue = $(input).val();
     if (!regex.test(inputValue) || inputValue === "") {
-        // $(input).next().fadeIn(500)
+        $(input).next().fadeIn(500)
         return false;
     } else {
-        // $(input).next().fadeOut(500)
+        $(input).next().fadeOut(500)
         return true;
     }
 }
@@ -476,8 +444,11 @@ function checkRepasswordValue(repassInput, passInput) {
     let repassValue = $(repassInput).val()
     let passValue = $(passInput).val()
     if (passValue !== repassValue) {
+        $(repassInput).next().removeClass("alert-success").addClass("alert-danger").text("Enter The Same Password").fadeIn(1500)
         return false;
-    } if (passValue === repassValue && repassValue !== "") {
+    }
+    if (passValue === repassValue && repassValue !== '' && passValue !== '') {
+        $(repassInput).next().removeClass("alert-danger").addClass("alert-success").fadeIn(500).text("password is matched").fadeOut(1500)
         return true;
     }
 }
@@ -485,10 +456,7 @@ function checkRepasswordValue(repassInput, passInput) {
 //@@ the implementaion of the Function which Check The Form Validation
 function formValidation(nameIsValid, phoneIsValid, passwordIsValid, emailIsValid, ageIsValid, repasswordIsValid) {
     if (nameIsValid && phoneIsValid && passwordIsValid && emailIsValid && ageIsValid && repasswordIsValid) {
-        console.log("E4taa")
         $('#submit').removeClass("disabled");
-    } else {
-        console.log("offff")
     }
 }
 
